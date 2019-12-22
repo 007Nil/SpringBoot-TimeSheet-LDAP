@@ -29,8 +29,9 @@ public class LoginController {
 	@ResponseBody
 	public boolean userValidation(String uname, String passwd, HttpSession session) {
 		
-		session.setAttribute("uaname", uname);
-		System.out.println(session.getAttribute("uaname"));
+		session.setAttribute("uname", uname);
+		session.setAttribute("passwd", passwd);
+		
 		
 		System.out.println(uname +"  " +passwd);
 		boolean isvalid = false;

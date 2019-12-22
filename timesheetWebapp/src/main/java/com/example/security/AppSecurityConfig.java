@@ -1,34 +1,26 @@
-package com.example.security;
 
+/*package com.example.security;
+
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
+@EnableAutoConfiguration
 @EnableWebSecurity
-public class AppSecurityConfig extends WebSecurityConfigurerAdapter {
+//@EnableGlobalMethodSecurity(prePostEnabled = false)
+public class AppSecurityConfig extends WebSecurityConfigurerAdapter {*/
+
+	/* Login And Logout Using Spring Security */
 
 	/*
-	 * Login And Logout Using Spring Security
+	 * @Override protected void configure(HttpSecurity http) throws Exception { http
+	 * .formLogin() .loginPage("/login") .permitAll() .and() .logout().permitAll();
+	 * }
 	 */
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
-		http
-		.authorizeRequests()
-		.antMatchers("/login").permitAll()
-		.anyRequest().fullyAuthenticated()
-		.and()
-		.formLogin()
-				.loginPage("/login").permitAll()
-				.and().logout()
-				.invalidateHttpSession(true)
-				.clearAuthentication(true)
-				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-				.logoutSuccessUrl("/login");
-
-	}
-
-}
+/*
+ * }
+ */
