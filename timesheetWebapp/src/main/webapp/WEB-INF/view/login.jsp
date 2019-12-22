@@ -8,43 +8,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Insert title here</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="../CSS/login.css">
+	<script type="text/javascript"><%@include file = "/WEB-INF/JS/login.js" %></script>
 </head>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
- <script type="text/javascript" src="../JS/login.js"></script>
- <link rel="stylesheet" href="../CSS/login.css">
-<body>
 
-	<div class="form">
+<body>
+	<div class="main">
+		<p class="sign" align="center">Sign in</p>
 		<div>
 			<ul id="form-messages">
-				<!-- AJAX INPUT -->
+			 &nbsp;
 			</ul>
 		</div>
-		<div>
-
-
-			<form id="submit-form" action="/isValid" method="POST">
-				<div>
-					<label for="username">Username</label>
-					<input type="text" name="uname" id="username">
-				</div>
-
-				<div>
-					<label for="password">Password</label>
-					<input type="password" name="passwd" id="password">
-				</div>
-
-				<div>
-					<input type="submit" name="" id="login-submit" value="Login">
-				</div>
+		<div class="form-div">
+			<form class="form1" id="submit-form" action="isValid" method="POST">
+				<input class="un " id="username" name="uname" type="text" align="center" placeholder="Username">
+				<input class="pass" id="password" name="passwd" type="password" align="center" placeholder="Password">
+				<input class="submit" id="login-submit" type="submit" align="center" value="Sign in"></input>
+				<p class="forgot" align="center"><a href="#">Forgot Password?</p>
 			</form>
 		</div>
-	</div>
-
-	<script type="text/javascript">
-		
-	</script>
-
+	
+	
+		</div>
 </body>
 
 </html>

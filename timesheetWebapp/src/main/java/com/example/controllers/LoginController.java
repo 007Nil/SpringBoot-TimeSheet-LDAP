@@ -17,6 +17,11 @@ public class LoginController {
 	@Autowired
 	Authentcation auth;
 	
+	@RequestMapping(value = "/")
+	public String entryPoint() {
+		return "redirect:/login";
+	}
+	
 	/* Simple Controller display Login Page */
 	@RequestMapping(value = "/login")
 	public String loginController() {
