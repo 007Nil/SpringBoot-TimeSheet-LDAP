@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Welcome</title>
+<link rel="stylesheet" href="../CSS/home.css">
 </head>
 <body>
 
@@ -13,10 +14,17 @@
 		response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
 		response.setDateHeader("Expires", 0);
 	%>
-	
+	<div class="nav-bar">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">News</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">About</a></li>
+			<li style="float:right"><a class="active" href="/logout">Logout</a>
+		  </ul>
+	  </div>
+
+
 	<p>Welcome To Home Page</p>
-	<form action="/logout">
-		<input type="submit" value="Logout">
-	</form>
 </body>
 </html>
