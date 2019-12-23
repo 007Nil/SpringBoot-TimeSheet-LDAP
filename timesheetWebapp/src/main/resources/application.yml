@@ -1,0 +1,12 @@
+spring:
+  ldap:
+
+#     Spring LDAP
+#    
+#     In this example we use an embedded ldap server. When using a real one,
+#     you can configure the settings here.
+#    
+     urls: ldap://localhost:389
+     base: dc=example,dc=com
+     username: cn=admin,dc=example,dc=com
+     password: P@ssw0rd
