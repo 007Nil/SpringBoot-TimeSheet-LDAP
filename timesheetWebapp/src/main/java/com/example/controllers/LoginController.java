@@ -41,12 +41,12 @@ public class LoginController {
 		System.out.println(uname +"  " +passwd);
 		boolean isvalid = false;
 		if (uname != null && passwd != null) {
-			if (auth.userVerify(uname, passwd) == true) {
-				isvalid = true;
-				return isvalid;
-			}
-			else
-				return isvalid;
+				if (auth.userVerify(uname, passwd) == true) {
+					isvalid = true;
+					return isvalid;
+				}
+				else
+					return isvalid;
 		}
 		else
 			return	isvalid;	
