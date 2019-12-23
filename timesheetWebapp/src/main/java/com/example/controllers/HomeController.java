@@ -1,11 +1,15 @@
 package com.example.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.example.dao.PersonDao;
 import com.example.services.PersonService;
 
 @Controller
@@ -21,9 +25,14 @@ public class HomeController {
 		if (userName == null || password == null) {
 			return "redirect:/login";
 		} else {
-			System.out.println(personService.getPersonNamesByLastName(userName));
 			return "home";
 		}
 
+	}
+	@RequestMapping(value= "/ldapUserdata")
+	public @ResponseBody List<PersonDao> ldapUseailsrDet(HttpSession session) {
+		String userName =(String) session.getAttribute("uname");
+		System.out.println("Hit");
+		return personService.getPersonNamesByLastName(userName);
 	}
 }
