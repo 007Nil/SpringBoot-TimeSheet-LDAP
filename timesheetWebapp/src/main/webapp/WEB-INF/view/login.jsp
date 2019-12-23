@@ -10,7 +10,7 @@
 	<title>Insert title here</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="../CSS/login.css">
-	<script type="text/javascript"><%@include file = "/WEB-INF/JS/login.js" %></script>
+	<script type="text/javascript" src="/JS/login.js"></script>
 </head>
 
 <body>
