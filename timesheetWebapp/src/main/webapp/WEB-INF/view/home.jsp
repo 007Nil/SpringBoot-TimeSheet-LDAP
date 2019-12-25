@@ -18,17 +18,32 @@
 		response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
 		response.setDateHeader("Expires", 0);
 	%>
-	<div class="nav-bar">
-		<ul>
-			<li><a href="#">Home</a></li>
-			<li><a href="#">News</a></li>
-			<li><a href="#">Contact</a></li>
-			<li><a href="#">About</a></li>
-			<li style="float:right"><a class="active" href="/logout">Logout</a>
-		</ul>
+	<div class="main">
+		<div class="nav-bar">
+			<ul>
+				<li><a href="#">Mail</a></li>
+				<li><a href="#">Timesheet</a></li>
+				<li><a href="#">Settings</a></li>
+				<li style="float:right"><a class="active" href="/logout">Logout</a>
+			</ul>
+		</div>
+		<div class="usertable-div">
+			<table id="userDetails-table">
+				<thead>
+					<tr>
+						<th colspan="2">User Details</th>
+					</tr>
+				</thead>
+				<tbody id="table-data">
+					<!-- Fillup using Javascript -->
+				</tbody>
+			</table>
+		</div>
 	</div>
 
-	<p>Welcome To Home Page</p>
+
+
+
 </body>
 
 </html>

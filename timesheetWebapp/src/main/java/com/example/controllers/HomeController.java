@@ -1,5 +1,6 @@
 package com.example.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.dao.PersonDao;
 import com.example.services.PersonService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Controller
 public class HomeController {
@@ -29,10 +32,16 @@ public class HomeController {
 		}
 
 	}
+	
+//	Send a JESON String to JAVASCRIPT(home.js)
 	@RequestMapping(value= "/ldapUserdata")
-	public @ResponseBody List<PersonDao> ldapUseailsrDet(HttpSession session) {
+	public @ResponseBody String ldapUseailsrDet(HttpSession session) throws JsonProcessingException {
 		String userName =(String) session.getAttribute("uname");
-		System.out.println("Hit");
-		return personService.getPersonNamesByLastName(userName);
+//		System.out.println(userName);
+		List<PersonDao> obj = new ArrayList<>();
+		obj = personService.getPersonNamesByLastName(userName);
+		ObjectMapper mapper = new ObjectMapper();
+        String jsonInString = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(obj);
+        return jsonInString;
 	}
 }

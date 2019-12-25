@@ -28,8 +28,9 @@ public class PersonService {
 		sc.setSearchScope(SearchControls.SUBTREE_SCOPE);
 		sc.setTimeLimit(THREE_SECONDS);
 		sc.setCountLimit(10);
-		sc.setReturningAttributes(new String[] { "uid", "givenName", "sn", "description", "mail", "telephoneNumber",
-				"postOfficeBox", "postalCode", "postalAddress", "street", "employeeType", "l", "st", "o" });
+		sc.setReturningAttributes(
+				new String[] { "sn", "givenName", "uid", "cn", "description", "title", "telephoneNumber", "street",
+						"postalCode", "postOfficeBox", "l", "st", "initials", "mail", "o", "postalAddress" });
 
 		AndFilter filter = new AndFilter();
 		filter.and(new EqualsFilter("objectclass", "person"));
@@ -44,7 +45,6 @@ public class PersonService {
 	private class PersonAttributesMapper implements AttributesMapper<PersonDao> {
 		public PersonDao mapFromAttributes(Attributes attrs) throws NamingException {
 			PersonDao person = new PersonDao();
-
 			person.setFullName((String) attrs.get("givenName").get());
 			person.setLastName((String) attrs.get("sn").get());
 			person.setUserName((String) attrs.get("uid").get());
@@ -54,7 +54,6 @@ public class PersonService {
 			person.setPostOfficeBox((String) attrs.get("postOfficeBox").get());
 			person.setPostalCode((String) attrs.get("postalCode").get());
 			person.setPostalAddress((String) attrs.get("postalAddress").get());
-			person.setEmployeeType((String) attrs.get("employeeType").get());
 			person.setNatinality((String) attrs.get("l").get());
 			person.setState((String) attrs.get("st").get());
 			person.setOrganigation((String) attrs.get("o").get());

@@ -11,7 +11,6 @@ public class PersonDao {
 	private String postOfficeBox;
 	private String postalCode;
 	private String postalAddress;
-	private String employeeType;
 	private String Natinality;
 	private String state;
 	private String organigation;
@@ -21,6 +20,7 @@ public class PersonDao {
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public PersonDao(String fullName, String lastName) {
 		this.fullName = fullName;
 		this.lastName = lastName;
@@ -98,13 +98,6 @@ public class PersonDao {
 		this.postalAddress = postalAddress;
 	}
 
-	public String getEmployeeType() {
-		return employeeType;
-	}
-
-	public void setEmployeeType(String employeeType) {
-		this.employeeType = employeeType;
-	}
 
 	public String getNatinality() {
 		return Natinality;
@@ -142,8 +135,7 @@ public class PersonDao {
 	public String toString() {
 		return "PersonDao [fullName=" + fullName + ", lastName=" + lastName + ", userName=" + userName
 				+ ", description=" + description + ", mobile=" + mobile + ", street=" + street + ", postOfficeBox="
-				+ postOfficeBox + ", postalCode=" + postalCode + ", postalAddress=" + postalAddress + ", employeeType="
-				+ employeeType + ", Natinality=" + Natinality + ", state=" + state + ", organigation=" + organigation
+				+ postOfficeBox + ", postalCode=" + postalCode + ", postalAddress=" + postalAddress + ", Natinality=" + Natinality + ", state=" + state + ", organigation=" + organigation
 				+ ", email=" + email + "]";
 	}
 }
